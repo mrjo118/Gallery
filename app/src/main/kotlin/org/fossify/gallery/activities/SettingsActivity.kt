@@ -71,6 +71,7 @@ class SettingsActivity : SimpleActivity() {
         setupScrollHorizontally()
         setupScreenRotation()
         setupHideSystemUI()
+        setupShowStatusAndNavigation()
         setupHiddenItemPasswordProtection()
         setupExcludedItemPasswordProtection()
         setupAppPasswordProtection()
@@ -345,6 +346,14 @@ class SettingsActivity : SimpleActivity() {
         binding.settingsHideSystemUiHolder.setOnClickListener {
             binding.settingsHideSystemUi.toggle()
             config.hideSystemUI = binding.settingsHideSystemUi.isChecked
+        }
+    }
+
+    private fun setupShowStatusAndNavigation() {
+        binding.settingsShowStatusAndNavigation.isChecked = config.showStatusAndNavigation
+        binding.settingsShowStatusAndNavigationHolder.setOnClickListener {
+            binding.settingsShowStatusAndNavigation.toggle()
+            config.showStatusAndNavigation = binding.settingsShowStatusAndNavigation.isChecked
         }
     }
 
@@ -883,6 +892,7 @@ class SettingsActivity : SimpleActivity() {
                 put(MAX_BRIGHTNESS, config.maxBrightness)
                 put(BLACK_BACKGROUND, config.blackBackground)
                 put(HIDE_SYSTEM_UI, config.hideSystemUI)
+                put(SHOW_STATUS_AND_NAVIGATION, config.showStatusAndNavigation)
                 put(ALLOW_INSTANT_CHANGE, config.allowInstantChange)
                 put(ALLOW_PHOTO_GESTURES, config.allowPhotoGestures)
                 put(ALLOW_DOWN_GESTURE, config.allowDownGesture)
@@ -1026,6 +1036,7 @@ class SettingsActivity : SimpleActivity() {
                 MAX_BRIGHTNESS -> config.maxBrightness = value.toBoolean()
                 BLACK_BACKGROUND -> config.blackBackground = value.toBoolean()
                 HIDE_SYSTEM_UI -> config.hideSystemUI = value.toBoolean()
+                SHOW_STATUS_AND_NAVIGATION -> config.showStatusAndNavigation = value.toBoolean()
                 ALLOW_INSTANT_CHANGE -> config.allowInstantChange = value.toBoolean()
                 ALLOW_PHOTO_GESTURES -> config.allowPhotoGestures = value.toBoolean()
                 ALLOW_DOWN_GESTURE -> config.allowDownGesture = value.toBoolean()

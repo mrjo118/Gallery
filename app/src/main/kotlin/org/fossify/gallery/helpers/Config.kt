@@ -304,6 +304,10 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getBoolean(HIDE_SYSTEM_UI, false)
         set(hideSystemUI) = prefs.edit().putBoolean(HIDE_SYSTEM_UI, hideSystemUI).apply()
 
+    var showStatusAndNavigation: Boolean
+        get() = prefs.getBoolean(SHOW_STATUS_AND_NAVIGATION, false)
+        set(showStatusAndNavigation) = prefs.edit().putBoolean(SHOW_STATUS_AND_NAVIGATION, showStatusAndNavigation).apply()
+
     var deleteEmptyFolders: Boolean
         get() = prefs.getBoolean(DELETE_EMPTY_FOLDERS, false)
         set(deleteEmptyFolders) = prefs.edit().putBoolean(DELETE_EMPTY_FOLDERS, deleteEmptyFolders).apply()

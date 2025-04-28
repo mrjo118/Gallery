@@ -477,6 +477,21 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/settings_show_status_and_navigation_holder"
+                style="@style/SettingsHolderSwitchStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <org.fossify.commons.views.MyMaterialSwitch
+                    android:id="@+id/settings_show_status_and_navigation"
+                    style="@style/SettingsSwitchStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/show_status_and_navigation" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/settings_allow_instant_change_holder"
                 style="@style/SettingsHolderSwitchStyle"
                 android:layout_width="match_parent"
